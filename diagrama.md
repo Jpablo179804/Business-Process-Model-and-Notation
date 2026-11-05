@@ -23,6 +23,11 @@ graph TD
         T4 --> G4{¿Cuenta con historial transaccional?}
         G4 -- Sí --> T6[Bloquear borrado físico: Cambiar a Inactivo]
         G4 -- No --> T7[Ejecutar Borrado Físico]
+        
+        %% Conexión de errores a fin del proceso
+        Err1 --> F2([Fin: Operación Rechazada])
+        Err2 --> F2
+        Err3 --> F2
     end
 
     subgraph BD [Base de Datos ERP y Auditoría]
